@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dr. Juneja's Neuro & Diabetes Centre | Dr. Abhishek Juneja</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#07111f;--deep:#0b1a2e;--panel:#0f2137;--card:#132840;--gold:#c8a96e;--gold2:#e8cc96;--teal:#2dd4bf;--muted:#6b8caa;--light:#e8f0f8;--white:#ffffff;--red:#e05555}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Outfit',sans-serif;background:var(--ink);color:var(--light);overflow-x:hidden}
+::-webkit-scrollbar{width:4px}::-webkit-scrollbar-track{background:var(--ink)}::-webkit-scrollbar-thumb{background:var(--gold);border-radius:2px}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:0 5%;height:72px;background:rgba(7,17,31,0.94);backdrop-filter:blur(20px);border-bottom:1px solid rgba(200,169,110,0.12)}
+.nav-brand strong{font-family:'Cormorant Garamond',serif;font-size:1.15rem;color:var(--gold)}
+.nav-brand span{display:block;font-size:0.62rem;color:var(--muted);letter-spacing:2.5px;text-transform:uppercase}
+.nav-menu{display:flex;gap:2.5rem;list-style:none}
+.nav-menu a{font-size:0.78rem;color:var(--muted);text-decoration:none;letter-spacing:1px;text-transform:uppercase;transition:color 0.3s}
+.nav-menu a:hover{color:var(--gold)}
+.nav-book{background:transparent;border:1px solid var(--gold);color:var(--gold);padding:0.5rem 1.3rem;border-radius:3px;font-family:'Outfit',sans-serif;font-size:0.75rem;letter-spacing:1.5px;text-transform:uppercase;text-decoration:none;transition:all 0.3s}
+.nav-book:hover{background:var(--gold);color:var(--ink)}
+
+/* HERO */
+.hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;position:relative;overflow:hidden}
+.hero-left{display:flex;flex-direction:column;justify-content:center;padding:120px 8% 80px 5%;position:relative;z-index:2}
+.eyebrow{display:inline-flex;align-items:center;gap:0.7rem;margin-bottom:2rem}
+.eyebrow-line{width:36px;height:1px;background:var(--gold)}
+.eyebrow span{font-size:0.65rem;letter-spacing:3px;text-transform:uppercase;color:var(--gold)}
+.live{display:inline-block;width:6px;height:6px;border-radius:50%;background:#4ade80;margin-right:5px;animation:lp 1.5s ease-in-out infinite}
+@keyframes lp{0%,100%{opacity:1}50%{opacity:0.3}}
+h1{font-family:'Cormorant Garamond',serif;font-size:clamp(3rem,5vw,5rem);line-height:1.05;color:var(--white);animation:hi 1s cubic-bezier(.16,1,.3,1) both}
+h1 em{color:var(--gold);font-style:italic}
+.hero-sub{font-family:'Cormorant Garamond',serif;font-size:clamp(1rem,1.6vw,1.25rem);color:var(--muted);font-weight:400;letter-spacing:0.5px;margin:0.5rem 0 1.8rem;animation:hi 1s .1s cubic-bezier(.16,1,.3,1) both}
+.hero-desc{font-size:0.92rem;line-height:1.9;color:#6a8faa;max-width:420px;margin-bottom:2.5rem;animation:hi 1s .2s cubic-bezier(.16,1,.3,1) both}
+.hstats{display:flex;gap:0;margin-bottom:3rem;animation:hi 1s .3s cubic-bezier(.16,1,.3,1) both}
+.hs{padding:0.8rem 2rem 0.8rem 0;margin-right:2rem;border-right:1px solid rgba(200,169,110,0.15)}
+.hs:last-child{border-right:none}
+.hs-n{font-family:'Cormorant Garamond',serif;font-size:2.5rem;color:var(--gold);line-height:1;font-weight:700}
+.hs-l{font-size:0.65rem;color:var(--muted);text-transform:uppercase;letter-spacing:1.5px;margin-top:0.2rem}
+.hbtns{display:flex;gap:1rem;animation:hi 1s .4s cubic-bezier(.16,1,.3,1) both}
+.btn-g{display:inline-flex;align-items:center;gap:0.5rem;background:var(--gold);color:var(--ink);padding:0.9rem 2rem;border-radius:3px;text-decoration:none;font-weight:600;font-size:0.85rem;transition:all 0.3s}
+.btn-g:hover{background:var(--gold2);transform:translateY(-2px);box-shadow:0 12px 32px rgba(200,169,110,0.3)}
+.btn-o{display:inline-flex;align-items:center;gap:0.5rem;border:1px solid rgba(200,169,110,0.3);color:var(--gold);padding:0.9rem 2rem;border-radius:3px;text-decoration:none;font-size:0.85rem;transition:all 0.3s}
+.btn-o:hover{border-color:var(--gold);background:rgba(200,169,110,0.06)}
+@keyframes hi{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+
+/* HERO RIGHT */
+.hero-right{position:relative;overflow:hidden;display:grid;grid-template-rows:1fr 1fr;grid-template-columns:1fr 1fr;gap:3px}
+.hero-right::before{content:'';position:absolute;inset:0;z-index:2;background:linear-gradient(to right,var(--ink) 0%,transparent 30%),linear-gradient(to top,var(--ink) 0%,transparent 25%)}
+.himg{overflow:hidden}
+.himg img{width:100%;height:100%;object-fit:cover;filter:brightness(0.45) saturate(0.7);transition:transform 8s ease}
+.himg:hover img{transform:scale(1.06)}
+.himg-main{grid-row:1/3;grid-column:1/2}
+.himg-top{grid-row:1/2;grid-column:2/3}
+.himg-bot{grid-row:2/3;grid-column:2/3}
+.hero-badge{position:absolute;bottom:2.5rem;right:2.5rem;z-index:10;background:rgba(7,17,31,0.9);border:1px solid rgba(200,169,110,0.3);backdrop-filter:blur(12px);border-radius:12px;padding:1.2rem 1.6rem;text-align:center;box-shadow:0 8px 32px rgba(0,0,0,0.5)}
+.hb-stars{color:var(--gold);font-size:1rem;letter-spacing:2px}
+.hb-num{font-family:'Cormorant Garamond',serif;font-size:2.2rem;color:var(--white);font-weight:700;line-height:1.1}
+.hb-lbl{font-size:0.62rem;color:var(--muted);text-transform:uppercase;letter-spacing:2px}
+
+/* SECTION COMMONS */
+.sw{padding:100px 5%}
+.sl{font-size:0.62rem;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;display:flex;align-items:center;gap:0.8rem}
+.sl::before{content:'';display:block;width:28px;height:1px;background:var(--gold)}
+h2{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,3.5vw,3rem);line-height:1.15;color:var(--white);margin-bottom:1rem}
+.sdesc{color:var(--muted);line-height:1.8;font-size:0.92rem;max-width:500px}
+.fade-up{opacity:0;transform:translateY(28px);transition:opacity 0.7s,transform 0.7s}
+.fade-up.vis{opacity:1;transform:translateY(0)}
+
+/* SPECIALTIES */
+.spec-bg{background:var(--deep)}
+.spec-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;margin-top:4rem;background:rgba(200,169,110,0.07);border:1px solid rgba(200,169,110,0.07);border-radius:12px;overflow:hidden}
+.sitem{background:var(--deep);padding:2.2rem;position:relative;overflow:hidden;transition:background 0.3s}
+.sitem::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(to right,var(--gold),transparent);transform:scaleX(0);transform-origin:left;transition:transform 0.4s}
+.sitem:hover{background:var(--panel)}
+.sitem:hover::before{transform:scaleX(1)}
+.snum{font-family:'Cormorant Garamond',serif;font-size:3rem;color:rgba(200,169,110,0.07);font-weight:700;line-height:1;margin-bottom:0.3rem}
+.sico{font-size:1.8rem;margin-bottom:0.8rem}
+.sitem h3{font-size:0.95rem;color:var(--white);margin-bottom:0.5rem;font-weight:500}
+.sitem p{font-size:0.8rem;color:var(--muted);line-height:1.7}
+
+/* GALLERY */
+.gallery-bg{background:var(--ink)}
+.gal-top{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:3rem}
+.slider-outer{position:relative;border-radius:16px;overflow:hidden}
+.slider-track{display:flex;transition:transform 0.65s cubic-bezier(0.25,0.46,0.45,0.94)}
+.slide{min-width:100%;height:520px;position:relative;overflow:hidden}
+.slide img{width:100%;height:100%;object-fit:cover;filter:brightness(0.6) saturate(0.75);transform:scale(1.05);transition:transform 7s ease,filter 0.5s}
+.slide.act img{transform:scale(1)}
+.slov{position:absolute;inset:0;background:linear-gradient(to top,rgba(7,17,31,0.96) 0%,rgba(7,17,31,0.3) 55%,rgba(7,17,31,0.05) 100%)}
+.slcont{position:absolute;bottom:0;left:0;right:0;padding:2.8rem 3rem;display:flex;justify-content:space-between;align-items:flex-end}
+.sltag{display:inline-block;border:1px solid rgba(200,169,110,0.4);color:var(--gold);font-size:0.62rem;letter-spacing:2px;text-transform:uppercase;padding:0.2rem 0.8rem;border-radius:2px;margin-bottom:0.7rem}
+.sltxt h3{font-family:'Cormorant Garamond',serif;font-size:2.2rem;color:var(--white);line-height:1.2;margin-bottom:0.4rem}
+.sltxt p{font-size:0.82rem;color:#6a8faa;max-width:500px}
+.slnum{font-family:'Cormorant Garamond',serif;font-size:4rem;color:rgba(255,255,255,0.06);font-weight:700;line-height:1;white-space:nowrap;padding-bottom:0.5rem}
+.sarr{position:absolute;top:50%;transform:translateY(-50%);width:48px;height:48px;border-radius:50%;background:rgba(7,17,31,0.75);border:1px solid rgba(200,169,110,0.2);color:var(--gold);font-size:1rem;display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:10;transition:all 0.3s;backdrop-filter:blur(8px)}
+.sarr:hover{background:var(--gold);color:var(--ink);border-color:var(--gold)}
+.sarr-p{left:1.2rem}.sarr-n{right:1.2rem}
+.sdots{display:flex;gap:0.5rem;margin-top:1.5rem;justify-content:center}
+.sdot{width:6px;height:6px;border-radius:3px;background:rgba(200,169,110,0.2);cursor:pointer;transition:all 0.4s}
+.sdot.on{width:28px;background:var(--gold)}
+
+/* ABOUT */
+.about-bg{background:var(--deep)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;margin-top:4rem}
+.img-stack{position:relative;height:520px}
+.is-main{position:absolute;left:0;top:0;width:75%;height:82%;border-radius:12px;overflow:hidden;border:1px solid rgba(200,169,110,0.1);box-shadow:0 24px 60px rgba(0,0,0,0.5)}
+.is-main img{width:100%;height:100%;object-fit:cover;filter:brightness(0.7) saturate(0.8)}
+.is-sm{position:absolute;right:0;bottom:0;width:54%;height:48%;border-radius:12px;overflow:hidden;border:3px solid var(--deep);box-shadow:0 16px 40px rgba(0,0,0,0.5)}
+.is-sm img{width:100%;height:100%;object-fit:cover;filter:brightness(0.65) saturate(0.8)}
+.is-badge{position:absolute;left:-1rem;bottom:28%;background:var(--ink);border:1px solid rgba(200,169,110,0.25);border-radius:10px;padding:1rem 1.4rem;box-shadow:0 8px 24px rgba(0,0,0,0.5);z-index:5}
+.is-badge .bn{font-family:'Cormorant Garamond',serif;font-size:2rem;color:var(--gold);line-height:1;font-weight:700}
+.is-badge .bl{font-size:0.62rem;color:var(--muted);letter-spacing:1.5px;text-transform:uppercase}
+.apts{display:flex;flex-direction:column;gap:1.8rem}
+.apt{display:flex;gap:1.2rem;align-items:flex-start}
+.apt-ic{width:44px;height:44px;border-radius:8px;flex-shrink:0;background:rgba(200,169,110,0.07);border:1px solid rgba(200,169,110,0.13);display:flex;align-items:center;justify-content:center;font-size:1.2rem}
+.apt h4{font-size:0.92rem;color:var(--white);margin-bottom:0.3rem;font-weight:500}
+.apt p{font-size:0.8rem;color:var(--muted);line-height:1.7}
+
+/* REVIEWS */
+.rev-bg{background:var(--ink)}
+.rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:4rem}
+.rcard{background:var(--panel);border:1px solid rgba(200,169,110,0.07);border-radius:12px;padding:2rem;transition:all 0.3s;position:relative;overflow:hidden}
+.rcard::before{content:'"';position:absolute;top:-0.8rem;right:1.5rem;font-family:'Cormorant Garamond',serif;font-size:7rem;color:rgba(200,169,110,0.05);font-weight:700;line-height:1}
+.rcard:hover{border-color:rgba(200,169,110,0.18);transform:translateY(-4px);box-shadow:0 16px 40px rgba(0,0,0,0.3)}
+.rc-stars{color:var(--gold);font-size:0.82rem;letter-spacing:2px;margin-bottom:1rem}
+.rcard p{font-size:0.85rem;color:#6a8faa;line-height:1.85;font-style:italic;margin-bottom:1.3rem}
+.rc-name strong{display:block;font-size:0.88rem;color:var(--light);margin-bottom:2px}
+.rc-name span{font-size:0.72rem;color:var(--muted);text-transform:uppercase;letter-spacing:1px}
+
+/* TIMINGS */
+.tim-bg{background:var(--deep)}
+.tim-layout{display:grid;grid-template-columns:1.2fr 1fr;gap:4rem;margin-top:4rem;align-items:start}
+.tim-table{border:1px solid rgba(200,169,110,0.08);border-radius:12px;overflow:hidden}
+.trow{display:flex;justify-content:space-between;align-items:center;padding:1rem 1.5rem;border-bottom:1px solid rgba(255,255,255,0.04);transition:background 0.2s}
+.trow:last-child{border-bottom:none}
+.trow:hover{background:rgba(200,169,110,0.04)}
+.trow.th{background:rgba(200,169,110,0.06);padding:0.75rem 1.5rem}
+.trow.th span{font-size:0.62rem;letter-spacing:2px;text-transform:uppercase;color:var(--gold)}
+.trow span:first-child{font-size:0.85rem;color:var(--muted)}
+.trow span:last-child{font-size:0.85rem;color:var(--light);font-weight:500}
+.closed{color:#e05555!important}
+.cboxes{display:flex;flex-direction:column;gap:1rem}
+.cbox{display:flex;gap:1rem;align-items:flex-start;background:var(--panel);border:1px solid rgba(200,169,110,0.07);border-radius:10px;padding:1.2rem;transition:border-color 0.3s}
+.cbox:hover{border-color:rgba(200,169,110,0.18)}
+.cbox-ic{width:40px;height:40px;border-radius:8px;flex-shrink:0;background:rgba(200,169,110,0.07);display:flex;align-items:center;justify-content:center;font-size:1.1rem}
+.cbox h5{font-size:0.62rem;color:var(--muted);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:0.3rem}
+.cbox p,.cbox a{font-size:0.9rem;color:var(--light);text-decoration:none;transition:color 0.3s}
+.cbox a:hover{color:var(--gold)}
+
+/* APPOINTMENT */
+.appt-bg{background:linear-gradient(135deg,var(--ink) 0%,#091d35 50%,var(--ink) 100%);position:relative;overflow:hidden}
+.appt-bg::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:800px;height:800px;background:radial-gradient(circle,rgba(200,169,110,0.04) 0%,transparent 70%);border-radius:50%}
+.appt-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
+.perks{display:flex;flex-direction:column;gap:0.8rem;margin-top:2rem}
+.perk{display:flex;align-items:center;gap:0.8rem;font-size:0.85rem;color:var(--muted)}
+.perk::before{content:'✓';color:var(--gold);font-weight:700}
+.aform{background:var(--panel);border:1px solid rgba(200,169,110,0.1);border-radius:16px;padding:2.5rem}
+.aform h3{font-family:'Cormorant Garamond',serif;font-size:1.7rem;color:var(--white);margin-bottom:0.3rem}
+.aform .fmeta{font-size:0.8rem;color:var(--muted);margin-bottom:2rem}
+.frow2{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.fg{margin-bottom:1rem}
+.fg label{display:block;font-size:0.62rem;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-bottom:0.4rem}
+.fg input,.fg select,.fg textarea{width:100%;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.07);border-radius:6px;padding:0.78rem 1rem;color:var(--light);font-family:'Outfit',sans-serif;font-size:0.85rem;outline:none;transition:border-color 0.3s}
+.fg input::placeholder,.fg textarea::placeholder{color:rgba(107,140,170,0.45)}
+.fg input:focus,.fg select:focus,.fg textarea:focus{border-color:rgba(200,169,110,0.35)}
+.fg select option{background:var(--panel)}
+.fg textarea{resize:vertical;min-height:80px}
+.fsub{width:100%;background:var(--gold);color:var(--ink);border:none;padding:0.95rem;border-radius:6px;font-family:'Outfit',sans-serif;font-size:0.88rem;font-weight:600;letter-spacing:0.5px;cursor:pointer;transition:all 0.3s;margin-top:0.5rem}
+.fsub:hover{background:var(--gold2);transform:translateY(-1px);box-shadow:0 8px 24px rgba(200,169,110,0.25)}
+
+/* FOOTER */
+footer{background:#040c18;border-top:1px solid rgba(200,169,110,0.07);padding:2rem 5%;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+.fbrand strong{font-family:'Cormorant Garamond',serif;font-size:1rem;color:var(--gold)}
+.fbrand p{font-size:0.7rem;color:var(--muted);margin-top:2px}
+footer small{font-size:0.7rem;color:rgba(107,140,170,0.4)}
+
+/* FAB */
+.fab{position:fixed;bottom:1.5rem;right:1.5rem;z-index:300;background:var(--gold);color:var(--ink);padding:0.85rem 1.6rem;border-radius:50px;text-decoration:none;font-weight:600;font-size:0.82rem;display:flex;align-items:center;gap:0.5rem;box-shadow:0 8px 28px rgba(200,169,110,0.45);transition:all 0.3s}
+.fab:hover{background:var(--gold2);transform:translateY(-3px)}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .hero{grid-template-columns:1fr}.hero-right{display:none}.hero-left{padding:110px 5% 70px}
+  .nav-menu{display:none}
+  .spec-grid,.rev-grid{grid-template-columns:1fr 1fr}
+  .about-grid,.tim-layout,.appt-grid{grid-template-columns:1fr}
+  .img-stack{height:280px}.frow2{grid-template-columns:1fr}
+  footer{flex-direction:column;text-align:center}
+}
+@media(max-width:600px){
+  .spec-grid,.rev-grid{grid-template-columns:1fr}
+  .slide{height:380px}.slcont{padding:1.5rem}.sltxt h3{font-size:1.5rem}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-brand">
+    <strong>Dr. Juneja's Neuro &amp; Diabetes Centre</strong>
+    <span>Bali Nagar, New Delhi</span>
+  </div>
+  <ul class="nav-menu">
+    <li><a href="#specialties">Specialties</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#timings">Timings</a></li>
+  </ul>
+  <a href="#appointment" class="nav-book">Book Appointment</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="eyebrow">
+      <div class="eyebrow-line"></div>
+      <span><span class="live"></span>Accepting Patients · New Delhi</span>
+    </div>
+    <h1>Dr. <em>Abhishek</em><br>Juneja</h1>
+    <p class="hero-sub">Neurologist &amp; Diabetologist &mdash; 15+ Years Experience</p>
+    <p class="hero-desc">Renowned specialist in Neurology and Diabetology practicing in Delhi. Expert care for Headache, Migraine, Back Pain, Dizziness, Sleep Disorders, and comprehensive Diabetes management.</p>
+    <div class="hstats">
+      <div class="hs"><div class="hs-n">15+</div><div class="hs-l">Years Practice</div></div>
+      <div class="hs"><div class="hs-n">448+</div><div class="hs-l">Reviews</div></div>
+      <div class="hs"><div class="hs-n">4.8★</div><div class="hs-l">Google Rating</div></div>
+    </div>
+    <div class="hbtns">
+      <a href="tel:09013098898" class="btn-g">&#128222; Call Now</a>
+      <a href="#appointment" class="btn-o">Book Appointment &rarr;</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="himg himg-main"><img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=800&q=80" alt="MRI Brain"></div>
+    <div class="himg himg-top"><img src="https://images.unsplash.com/photo-1551190822-a9333d879b1f?w=500&q=80" alt="Surgery"></div>
+    <div class="himg himg-bot"><img src="https://images.unsplash.com/photo-1587854692152-cbe660dbde88?w=500&q=80" alt="Diabetes"></div>
+    <div class="hero-badge">
+      <div class="hb-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <div class="hb-num">4.8</div>
+      <div class="hb-lbl">448 Reviews</div>
+    </div>
+  </div>
+</section>
+
+<!-- SPECIALTIES -->
+<section class="sw spec-bg" id="specialties">
+  <div class="sl fade-up">Areas of Expertise</div>
+  <h2 class="fade-up">Conditions We<br>Specialise In</h2>
+  <div class="spec-grid fade-up" style="margin-top:3.5rem">
+    <div class="sitem"><div class="snum">01</div><div class="sico">&#129504;</div><h3>Headache &amp; Migraine</h3><p>Chronic migraine, tension headaches, cluster headaches — accurate diagnosis and lasting personalised relief.</p></div>
+    <div class="sitem"><div class="snum">02</div><div class="sico">&#129460;</div><h3>Neck &amp; Back Pain</h3><p>Cervical spondylosis, lumbar disc issues, sciatica — targeted neurological treatment protocols.</p></div>
+    <div class="sitem"><div class="snum">03</div><div class="sico">&#128565;</div><h3>Dizziness &amp; Vertigo</h3><p>BPPV, vestibular disorders, balance problems — precise neurological diagnosis and effective care.</p></div>
+    <div class="sitem"><div class="snum">04</div><div class="sico">&#128564;</div><h3>Sleep Disorders</h3><p>Insomnia, sleep apnea, restless leg syndrome — comprehensive sleep health evaluation and treatment.</p></div>
+    <div class="sitem"><div class="snum">05</div><div class="sico">&#128137;</div><h3>Diabetes Management</h3><p>Type 1 &amp; 2 Diabetes, insulin optimisation, diabetic neuropathy — holistic long-term diabetes care.</p></div>
+    <div class="sitem"><div class="snum">06</div><div class="sico">&#9889;</div><h3>Neurological Disorders</h3><p>Epilepsy, Parkinson's, stroke management, peripheral neuropathy — expert specialist consultations.</p></div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="sw gallery-bg" id="gallery">
+  <div class="gal-top">
+    <div>
+      <div class="sl fade-up">Our Facility</div>
+      <h2 class="fade-up">Advanced Medical<br>Infrastructure</h2>
+    </div>
+  </div>
+  <div class="slider-outer">
+    <button class="sarr sarr-p" onclick="slide(-1)">&#8592;</button>
+    <button class="sarr sarr-n" onclick="slide(1)">&#8594;</button>
+    <div class="slider-track" id="sTrack">
+      <div class="slide act">
+        <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=1400&q=85" alt="Brain MRI">
+        <div class="slov"></div>
+        <div class="slcont"><div class="sltxt"><div class="sltag">&#129504; Neurology</div><h3>Brain MRI Scanning</h3><p>High-resolution MRI imaging for accurate neurological diagnosis and treatment planning</p></div><div class="slnum">01</div></div>
+      </div>
+      <div class="slide">
+        <img src="https://images.unsplash.com/photo-1551190822-a9333d879b1f?w=1400&q=85" alt="Operation Theatre">
+        <div class="slov"></div>
+        <div class="slcont"><div class="sltxt"><div class="sltag">&#127973; Surgery</div><h3>Operation Theatre</h3><p>Modern OT equipped for neurological and general surgical procedures with advanced monitoring</p></div><div class="slnum">02</div></div>
+      </div>
+      <div class="slide">
+        <img src="https://images.unsplash.com/photo-1530497610245-94d3c16cda28?w=1400&q=85" alt="EEG">
+        <div class="slov"></div>
+        <div class="slcont"><div class="sltxt"><div class="sltag">&#9889; Diagnostics</div><h3>EEG &amp; Nerve Conduction</h3><p>Advanced EEG, NCV and EMG testing for epilepsy, neuropathy and nerve disorder diagnosis</p></div><div class="slnum">03</div></div>
+      </div>
+      <div class="slide">
+        <img src="https://images.unsplash.com/photo-1587854692152-cbe660dbde88?w=1400&q=85" alt="Diabetes">
+        <div class="slov"></div>
+        <div class="slcont"><div class="sltxt"><div class="sltag">&#128137; Diabetology</div><h3>Diabetes Management</h3><p>Complete HbA1c monitoring, glucose profiling and personalised insulin management</p></div><div class="slnum">04</div></div>
+      </div>
+      <div class="slide">
+        <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=1400&q=85" alt="Consultation">
+        <div class="slov"></div>
+        <div class="slcont"><div class="sltxt"><div class="sltag">&#129658; Consultation</div><h3>Private Consultation Rooms</h3><p>Dedicated, comfortable and private spaces for thorough patient evaluation and follow-up</p></div><div class="slnum">05</div></div>
+      </div>
+      <div class="slide">
+        <img src="https://images.unsplash.com/photo-1516549655169-df83a0774514?w=1400&q=85" alt="CT Scan">
+        <div class="slov"></div>
+        <div class="slcont"><div class="sltxt"><div class="sltag">&#128300; Imaging</div><h3>CT Scan &amp; Advanced Imaging</h3><p>Latest CT and imaging technology for fast, precise neurological and vascular diagnostics</p></div><div class="slnum">06</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="sdots" id="sDots">
+    <span class="sdot on" onclick="goSlide(0)"></span>
+    <span class="sdot" onclick="goSlide(1)"></span>
+    <span class="sdot" onclick="goSlide(2)"></span>
+    <span class="sdot" onclick="goSlide(3)"></span>
+    <span class="sdot" onclick="goSlide(4)"></span>
+    <span class="sdot" onclick="goSlide(5)"></span>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="sw about-bg" id="about">
+  <div class="about-grid">
+    <div class="img-stack fade-up">
+      <div class="is-main"><img src="https://images.unsplash.com/photo-1551190822-a9333d879b1f?w=700&q=80" alt="Clinic"></div>
+      <div class="is-sm"><img src="https://images.unsplash.com/photo-1530497610245-94d3c16cda28?w=500&q=80" alt="Equipment"></div>
+      <div class="is-badge"><div class="bn">4.8&#9733;</div><div class="bl">Google Rated</div></div>
+    </div>
+    <div class="fade-up">
+      <div class="sl">About the Doctor</div>
+      <h2>Why Patients<br>Trust Dr. Juneja</h2>
+      <p class="sdesc" style="margin-bottom:2.5rem">Dr. Abhishek Juneja brings rare dual expertise in Neurology and Diabetology — delivering comprehensive, patient-first care in New Delhi for over 15 years.</p>
+      <div class="apts">
+        <div class="apt"><div class="apt-ic">&#127891;</div><div><h4>Dual Specialist Expertise</h4><p>Rare combination of Neurology and Diabetology — comprehensive care under one roof without referrals.</p></div></div>
+        <div class="apt"><div class="apt-ic">&#127885;</div><div><h4>448+ Verified Reviews</h4><p>Consistently rated 4.8&#9733; across 448 Google reviews — one of Delhi's most trusted neurology clinics.</p></div></div>
+        <div class="apt"><div class="apt-ic">&#9855;</div><div><h4>Accessible &amp; Welcoming</h4><p>Fully wheelchair-accessible facility with parking, conveniently located in Bali Nagar, New Delhi.</p></div></div>
+        <div class="apt"><div class="apt-ic">&#129658;</div><div><h4>Personalised Treatment Plans</h4><p>Every patient receives dedicated time, thorough examination, and a fully customised treatment plan.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="sw rev-bg" id="reviews">
+  <div class="sl fade-up">Patient Stories</div>
+  <h2 class="fade-up">What Our Patients<br>Say About Us</h2>
+  <div class="rev-grid">
+    <div class="rcard fade-up">
+      <div class="rc-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <p>Dr. Juneja is exceptional. My chronic migraine problem of 5 years was finally resolved after his treatment. Very thorough and listens carefully to every symptom.</p>
+      <div class="rc-name"><strong>Priya Sharma</strong><span>Google Review &middot; Migraine Patient</span></div>
+    </div>
+    <div class="rcard fade-up">
+      <div class="rc-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <p>Very knowledgeable and patient doctor. Explained everything in detail. My Type 2 diabetes is now well under control for the first time in years.</p>
+      <div class="rc-name"><strong>Rajesh Kumar</strong><span>Google Review &middot; Diabetes Patient</span></div>
+    </div>
+    <div class="rcard fade-up">
+      <div class="rc-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <p>Best neurologist in Delhi. Diagnosed my condition correctly when three other doctors could not. Highly professional staff and excellent facilities overall.</p>
+      <div class="rc-name"><strong>Anita Malhotra</strong><span>Google Review &middot; Neurology Patient</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- TIMINGS -->
+<section class="sw tim-bg" id="timings">
+  <div class="sl fade-up">Visit Us</div>
+  <h2 class="fade-up">Clinic Hours &amp;<br>Contact Details</h2>
+  <div class="tim-layout">
+    <div class="tim-table fade-up">
+      <div class="trow th"><span>Day</span><span>Timing</span></div>
+      <div class="trow"><span>Monday</span><span>6:00 PM &ndash; 9:00 PM</span></div>
+      <div class="trow"><span>Tuesday</span><span>6:00 PM &ndash; 9:00 PM</span></div>
+      <div class="trow"><span>Wednesday</span><span>6:00 PM &ndash; 9:00 PM</span></div>
+      <div class="trow"><span>Thursday</span><span>6:00 PM &ndash; 9:00 PM</span></div>
+      <div class="trow"><span>Friday</span><span>6:00 PM &ndash; 9:00 PM</span></div>
+      <div class="trow"><span>Saturday</span><span>6:00 PM &ndash; 9:00 PM</span></div>
+      <div class="trow"><span>Sunday</span><span class="closed">By Appointment Only</span></div>
+    </div>
+    <div class="cboxes fade-up">
+      <div class="cbox"><div class="cbox-ic">&#128222;</div><div><h5>Phone</h5><a href="tel:09013098898">090130 98898</a></div></div>
+      <div class="cbox"><div class="cbox-ic">&#128205;</div><div><h5>Address</h5><p>F-41, Block F, Bali Nagar<br>New Delhi, Delhi &ndash; 110015</p></div></div>
+      <div class="cbox"><div class="cbox-ic">&#9855;</div><div><h5>Accessibility</h5><p>Wheelchair accessible entrance, car park &amp; restroom</p></div></div>
+      <a href="https://maps.google.com/?q=F-41+Block+F+Bali+Nagar+New+Delhi" target="_blank" class="btn-o" style="justify-content:center;margin-top:0.5rem">&#128205; Get Directions on Google Maps</a>
+    </div>
+  </div>
+</section>
+
+<!-- APPOINTMENT -->
+<section class="sw appt-bg" id="appointment">
+  <div class="appt-grid">
+    <div class="fade-up">
+      <div class="sl">Get In Touch</div>
+      <h2>Book Your<br>Consultation</h2>
+      <p class="sdesc">Fill in the form and we will call you back to confirm your appointment at your preferred time.</p>
+      <div class="perks">
+        <div class="perk">No long waiting &mdash; appointments confirmed quickly</div>
+        <div class="perk">Private &amp; confidential consultations</div>
+        <div class="perk">Specialist care for Neuro &amp; Diabetes</div>
+        <div class="perk">Wheelchair accessible facility</div>
+        <div class="perk">Evening OPD &mdash; Mon to Sat, 6 PM to 9 PM</div>
+      </div>
+    </div>
+    <div class="aform fade-up">
+      <h3>Request a Callback</h3>
+      <p class="fmeta">We will confirm your appointment within a few hours</p>
+      <div class="frow2">
+        <div class="fg"><label>Full Name</label><input type="text" placeholder="Your name"></div>
+        <div class="fg"><label>Phone Number</label><input type="tel" placeholder="Mobile number"></div>
+      </div>
+      <div class="fg"><label>Concern</label>
+        <select>
+          <option value="" disabled selected>Select your concern</option>
+          <option>Headache / Migraine</option>
+          <option>Neck / Back Pain</option>
+          <option>Dizziness / Vertigo</option>
+          <option>Sleep Disorder</option>
+          <option>Diabetes</option>
+          <option>Epilepsy / Seizures</option>
+          <option>Parkinson's</option>
+          <option>Neuropathy</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="frow2">
+        <div class="fg"><label>Preferred Date</label><input type="date"></div>
+        <div class="fg"><label>Preferred Time</label>
+          <select><option>6:00 PM</option><option>6:30 PM</option><option>7:00 PM</option><option>7:30 PM</option><option>8:00 PM</option><option>8:30 PM</option></select>
+        </div>
+      </div>
+      <div class="fg"><label>Symptoms (Optional)</label><textarea placeholder="Briefly describe your symptoms..."></textarea></div>
+      <button class="fsub" onclick="this.textContent='✓ Request Sent! We will call you back shortly.';this.style.background='#2dd4bf';this.style.color='#07111f'">Confirm Appointment Request &rarr;</button>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="fbrand">
+    <strong>Dr. Juneja&rsquo;s Neuro &amp; Diabetes Centre</strong>
+    <p>F-41, Block F, Bali Nagar, New Delhi &ndash; 110015 &nbsp;&middot;&nbsp; 090130 98898</p>
+  </div>
+  <small>&copy; 2025 Dr. Juneja&rsquo;s Neuro &amp; Diabetes Centre. All rights reserved.</small>
+</footer>
+
+<a href="tel:09013098898" class="fab">&#128222; Call Now</a>
+
+<script>
+let cur=0,tot=6;
+const track=document.getElementById('sTrack');
+const dots=document.querySelectorAll('.sdot');
+const slides=document.querySelectorAll('.slide');
+function goSlide(n){slides[cur].classList.remove('act');cur=(n+tot)%tot;slides[cur].classList.add('act');track.style.transform=`translateX(-${cur*100}%)`;dots.forEach((d,i)=>d.classList.toggle('on',i===cur));}
+function slide(d){goSlide(cur+d);}
+setInterval(()=>slide(1),5000);
+const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('vis')}),{threshold:0.12});
+document.querySelectorAll('.fade-up').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
